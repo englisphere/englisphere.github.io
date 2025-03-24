@@ -70,7 +70,7 @@
 
             if (disqusDiv.style.display === "none") {
                 disqusDiv.style.display = "block";
-                button.textContent = "Sembunyikan";
+                button.textContent = "Tampilkan lebih sedikit";
 
                 // 🔴 Memuat Disqus hanya saat pertama kali diklik 🔴
                 if (!disqus_loaded) {
@@ -83,10 +83,9 @@
 
             } else {
                 disqusDiv.style.display = "none";
-                button.textContent = "Tampilkan kolom diskusi";
+                button.textContent = "Tampilkan lebih banyak";
             }
         }
-
 
         document.getElementById("toggleComments").addEventListener("click", toggleComments);
     </script>
