@@ -141,6 +141,21 @@ body {
 
 
 
+.post-content {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; /* Batasi tinggi teks */
+    line-height: 1.5em;
+    transition: max-height 0.3s ease-in-out;
+    text-align: justify; /* Buat teks rata kanan-kiri */
+}
+
+/* Saat tombol "Selengkapnya" diklik */
+.post-content.expanded {
+    max-height: 1000px; /* Buka semua teks */
+    transition: max-height 0.5s ease-in-out;
+}
 
 
 
