@@ -112,14 +112,15 @@ body {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 3em; /* Batasi tinggi teks */
+    max-height: 4.5em; /* Batasi tinggi teks awal */
     line-height: 1.5em;
-    transition: max-height 0.3s ease-in-out; /* Efek transisi saat membuka teks */
+    transition: max-height 0.3s ease-in-out;
+    text-align: justify;
 }
 
 /* Saat tombol "Selengkapnya" diklik */
 .post-content.expanded {
-    max-height: 1000px; /* Tinggi besar agar semua teks terlihat */
+    max-height: none; /* Biarkan konten terbuka sepenuhnya */
     transition: max-height 0.5s ease-in-out;
 }
 
