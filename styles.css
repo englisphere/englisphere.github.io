@@ -112,17 +112,35 @@ body {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 4.5em; /* Batasi tinggi teks awal */
+    max-height: 4.5em; /* Awalnya hanya menampilkan beberapa baris */
     line-height: 1.5em;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
     text-align: justify;
+    position: relative;
 }
 
 /* Saat tombol "Selengkapnya" diklik */
 .post-content.expanded {
-    max-height: none; /* Biarkan konten terbuka sepenuhnya */
-    transition: max-height 0.5s ease-in-out;
+    max-height: none; /* Pastikan semua teks muncul */
 }
+
+/* Mencegah teks yang terlalu panjang terlihat sebelum diperluas */
+.post-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+    display: block;
+}
+
+/* Hilangkan efek gradasi saat teks diperluas */
+.post-content.expanded::after {
+    display: none;
+}
+
 
 
 .post-content {
