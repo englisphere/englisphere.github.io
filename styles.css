@@ -124,23 +124,6 @@ body {
 }
 
 
-
-
-.post-meta {
-    font-size: 0.8em; /* Ukuran lebih kecil */
-    color: #888; /* Warna lebih pudar */
-    margin-bottom: 8px;
-}
-.post-meta strong {
-    color: #555; /* Warna sedikit lebih gelap dari tanggal, tapi tetap pudar */
-}
-.post-meta time {
-    font-style: italic;
-    color: #999; /* Warna paling pudar untuk tanggal dan waktu */
-}
-
-
-
 .post-content {
     display: block;
     overflow: hidden;
@@ -163,6 +146,25 @@ body {
     max-height: 1000px; /* Buka semua teks dan gambar */
     transition: max-height 0.5s ease-in-out;
 }
+
+
+
+.post-meta {
+    font-size: 0.8em; /* Ukuran lebih kecil */
+    color: #888; /* Warna lebih pudar */
+    margin-bottom: 8px;
+}
+.post-meta strong {
+    color: #555; /* Warna sedikit lebih gelap dari tanggal, tapi tetap pudar */
+}
+.post-meta time {
+    font-style: italic;
+    color: #999; /* Warna paling pudar untuk tanggal dan waktu */
+}
+
+
+
+
 
 
 
