@@ -56,6 +56,18 @@
     overflow: hidden; /* Mencegah elemen tersembunyi tetap berpengaruh */
 }
 
+
+article.post {
+    position: relative; /* Pastikan tidak menutupi elemen lain */
+    overflow: visible !important; /* Pastikan isinya tidak terpotong */
+    min-height: auto !important; /* Pastikan tingginya sesuai isi */
+    padding-bottom: 20px; /* Tambahkan ruang agar teks tidak terlalu mepet */
+    background: transparent !important; /* Pastikan tidak ada latar belakang yang menutupi */
+    z-index: 0 !important; /* Pastikan elemen ini tidak berada di atas teks */
+}
+
+    
+
 @media (max-width: 768px) { 
     .post-content {
         position: relative; /* Pastikan tidak tertutup elemen lain */
