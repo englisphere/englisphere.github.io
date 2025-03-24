@@ -38,6 +38,16 @@
     white-space: normal; /* Pastikan teks tidak terpotong */
     padding-bottom: 20px; /* Tambahkan ruang di bawah teks agar tidak terlalu dekat dengan tombol */
 }
+
+            .post-content {
+    display: block;
+    width: 100%; /* Pastikan lebar mengikuti parent */
+    max-width: 600px; /* Atur batas agar tidak terlalu melebar */
+    margin-bottom: 20px; /* Beri jarak sebelum tombol dan Disqus */
+    padding: 15px; /* Tambahkan ruang di dalam teks */
+    background-color: #f9f9f9; /* Opsional: Beri warna latar agar lebih jelas */
+    border-radius: 8px; /* Opsional: Buat tampilan lebih rapi */
+}
     </style>
 </head>
 <body>
@@ -64,7 +74,7 @@
             <br><br>
             </p>
             
-<br><br><br><br>
+<br><br>
 <button id="toggleComments" class="toggle-btn">Tampilkan kolom diskusi</button>
 
     <!-- Area Disqus -->
