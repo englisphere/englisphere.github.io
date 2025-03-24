@@ -32,6 +32,31 @@
             <p class="post-content">Silahkan berdiskusi di kolom chat yang disediakan, jangan lupa membuat akun disqus terlebih dahulu melalui akun google.
             
             <br><br><br>
+
+<button id="toggleComments" class="toggle-btn">Tampilkan lebih banyak</button>
+
+    <!-- Area Disqus -->
+    <div id="disqus_thread"></div>
+
+    <script>
+        var disqusDiv = document.getElementById("disqus_thread");
+        var button = document.getElementById("toggleComments");
+
+        function toggleComments() {
+            if (disqusDiv.style.display === "none") {
+                disqusDiv.style.display = "block";
+                button.textContent = "Tampilkan lebih sedikit";
+            } else {
+                disqusDiv.style.display = "none";
+                button.textContent = "Tampilkan lebih banyak";
+            }
+        }
+
+        document.getElementById("toggleComments").addEventListener("click", toggleComments);
+    </script>
+
+            <!-- 🔴 SCRIPT KOMENTAR DISQUS (SUDAH DIPASANG) 🔴 -->
+                
                 <div id="disqus_thread"></div>
 <script>
     /**
