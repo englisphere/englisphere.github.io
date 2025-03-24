@@ -88,23 +88,6 @@ body {
 
 
 
-.post-content {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Menampilkan hanya 2 baris */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 3em; /* Menghindari konten terlalu tinggi */
-}
-
-.read-more {
-    display: inline-block;
-    color: blue;
-    cursor: pointer;
-    font-size: 0.9em;
-    margin-top: 5px;
-    text-decoration: underline;
-}
 
 
 
