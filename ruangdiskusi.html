@@ -55,7 +55,7 @@
              </p>
             <br><br>
 
-<button id="toggleComments" class="toggle-btn">Tampilkan lebih banyak</button>
+<button id="toggleComments" class="toggle-btn">Tampilkan kolom diskusi</button>
 
     <!-- Area Disqus -->
     <div id="disqus_thread"></div>
@@ -68,7 +68,7 @@
 
             if (disqusDiv.style.display === "none") {
                 disqusDiv.style.display = "block";
-                button.textContent = "Tampilkan lebih sedikit";
+                button.textContent = "Sembunyikan";
 
                 // 🔴 Memuat Disqus hanya saat pertama kali diklik 🔴
                 if (!disqus_loaded) {
@@ -81,7 +81,7 @@
 
             } else {
                 disqusDiv.style.display = "none";
-                button.textContent = "Tampilkan lebih banyak";
+                button.textContent = "Tampilkan kolom diskusi";
             }
         }
 
