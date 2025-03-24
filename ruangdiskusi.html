@@ -48,6 +48,22 @@
     background-color: #f9f9f9; /* Opsional: Beri warna latar agar lebih jelas */
     border-radius: 8px; /* Opsional: Buat tampilan lebih rapi */
 }
+
+
+    #disqus_thread {
+    display: none; /* Pastikan tersembunyi saat awal */
+    height: 0; /* Pastikan tidak mengambil ruang */
+    overflow: hidden; /* Mencegah elemen tersembunyi tetap berpengaruh */
+}
+
+@media (max-width: 768px) { 
+    .post-content {
+        position: relative; /* Pastikan tidak tertutup elemen lain */
+        z-index: 10; /* Pastikan teks berada di atas */
+        background: white; /* Opsional: Pastikan latar belakang jelas */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -107,6 +123,16 @@
     }
 
     document.getElementById("toggleComments").addEventListener("click", toggleComments);
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var disqusDiv = document.getElementById("disqus_thread");
+        if (disqusDiv) {
+            disqusDiv.style.display = "none"; // Pastikan tidak muncul sebelum tombol diklik
+            disqusDiv.style.height = "0"; // Jangan sampai mengambil ruang
+        }
+    });
 
         
 </script>
