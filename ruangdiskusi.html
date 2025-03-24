@@ -8,6 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+
+
+
+<style>
+        #disqus_thread {
+            display: none; /* Awalnya disembunyikan */
+        }
+        .toggle-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -34,19 +56,29 @@
             <br><br>
 
 <button id="toggleComments" class="toggle-btn">Tampilkan lebih banyak</button>
-                
 
     <!-- Area Disqus -->
     <div id="disqus_thread"></div>
 
     <script>
-        var disqusDiv = document.getElementById("disqus_thread");
-        var button = document.getElementById("toggleComments");
-
+        var disqus_loaded = false;
         function toggleComments() {
+            var disqusDiv = document.getElementById("disqus_thread");
+            var button = document.getElementById("toggleComments");
+
             if (disqusDiv.style.display === "none") {
                 disqusDiv.style.display = "block";
                 button.textContent = "Tampilkan lebih sedikit";
+
+                // 🔴 Memuat Disqus hanya saat pertama kali diklik 🔴
+                if (!disqus_loaded) {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://englisphere.disqus.com/embed.js'; // Shortname Disqus kamu
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    disqus_loaded = true;
+                }
+
             } else {
                 disqusDiv.style.display = "none";
                 button.textContent = "Tampilkan lebih banyak";
@@ -55,27 +87,6 @@
 
         document.getElementById("toggleComments").addEventListener("click", toggleComments);
     </script>
-
-            <!-- 🔴 SCRIPT KOMENTAR DISQUS (SUDAH DIPASANG) 🔴 -->
-                
-             
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://englisphere.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
             
             </p>
 
