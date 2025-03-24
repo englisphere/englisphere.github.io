@@ -30,6 +30,14 @@
             border-radius: 5px;
             width: 200px;
         }
+
+    .post-content {
+    display: block;
+    overflow: visible; /* Pastikan teks tidak tersembunyi */
+    height: auto; /* Pastikan elemen menyesuaikan tinggi teks */
+    white-space: normal; /* Pastikan teks tidak terpotong */
+    padding-bottom: 20px; /* Tambahkan ruang di bawah teks agar tidak terlalu dekat dengan tombol */
+}
     </style>
 </head>
 <body>
@@ -53,7 +61,7 @@
             <h2>Ruang Diskusi</h2>
             
             <p class="post-content">Silahkan berdiskusi di kolom chat yang disediakan, jangan lupa membuat akun disqus terlebih dahulu melalui akun google.
-            <br><br><br><br><br><br><br><br>
+            <br><br>
             </p>
             
 <br><br>
@@ -90,11 +98,7 @@
 
     document.getElementById("toggleComments").addEventListener("click", toggleComments);
 
-        // 🟢 Muat Disqus lebih awal di latar belakang
-    loadDisqus();
-
-    // Event listener untuk tombol
-    document.getElementById("toggleComments").addEventListener("click", toggleComments);
+        
 </script>
             
            
