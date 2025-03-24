@@ -126,13 +126,6 @@ body {
 
 
 
-.post-content img {
-    width: 100%; /* Pastikan gambar tidak melebihi lebar kontainer */
-    height: auto; /* Biarkan tinggi gambar menyesuaikan */
-    display: block; /* Hindari adanya margin bawah yang tidak diinginkan */
-    margin: auto;
-}
-
 
 
 .post-meta {
