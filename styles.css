@@ -151,6 +151,9 @@ body {
 }
 
 
+.full-post .post-content {
+    max-height: none; /* Biarkan teks tampil sepenuhnya */
+}
 
 
 .footer {
