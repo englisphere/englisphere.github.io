@@ -64,38 +64,43 @@
             </p>
                 
 
-           
+            <button id="toggleComments" class="toggle-btn">Tampilkan kolom diskusi</button>
 
     <!-- Area Disqus -->
     <div id="disqus_thread"></div>
 
     <script>
-        var disqus_loaded = false;
-        function toggleComments() {
-            var disqusDiv = document.getElementById("disqus_thread");
-            var button = document.getElementById("toggleComments");
+    var disqus_loaded = false;
+    function toggleComments() {
+        var disqusDiv = document.getElementById("disqus_thread");
+        var button = document.getElementById("toggleComments");
 
-            if (disqusDiv.style.display === "none") {
+        // Langsung tampilkan div komentar
+        disqusDiv.style.display = "block";
+        button.textContent = "Tampilkan lebih sedikit";
+
+        // Load Disqus hanya sekali
+        if (!disqus_loaded) {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://englisphere.disqus.com/embed.js'; // Shortname Disqus kamu
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            disqus_loaded = true;
+        } else {
+            // Jika Disqus sudah dimuat, toggle tampilan
+            if (disqusDiv.style.display === "block") {
+                disqusDiv.style.display = "none";
+                button.textContent = "Tampilkan kolom diskusi";
+            } else {
                 disqusDiv.style.display = "block";
                 button.textContent = "Tampilkan lebih sedikit";
-
-                // 🔴 Memuat Disqus hanya saat pertama kali diklik 🔴
-                if (!disqus_loaded) {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://englisphere.disqus.com/embed.js'; // Shortname Disqus kamu
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    disqus_loaded = true;
-                }
-
-            } else {
-                disqusDiv.style.display = "none";
-                button.textContent = "Tampilkan lebih banyak";
             }
         }
+    }
 
-        document.getElementById("toggleComments").addEventListener("click", toggleComments);
-    </script>
+    document.getElementById("toggleComments").addEventListener("click", toggleComments);
+</script>
+
                 
             
             
