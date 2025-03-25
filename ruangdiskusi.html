@@ -84,17 +84,17 @@
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
             disqus_loaded = true;
-            button.textContent = "Tampilkan lebih sedikit";
+            button.textContent = "Sembunyikan";
         } else {
             // Toggle dengan visibility agar Disqus tetap bisa ditampilkan kembali
             if (disqusDiv.style.visibility === "hidden") {
                 disqusDiv.style.visibility = "visible";
                 disqusDiv.style.height = "auto"; // Pastikan tinggi kembali normal
-                button.textContent = "Tampilkan lebih sedikit";
+                button.textContent = "Sembunyikan";
             } else {
                 disqusDiv.style.visibility = "hidden";
                 disqusDiv.style.height = "0"; // Sembunyikan tanpa menghapus elemen
-                button.textContent = "Tampilkan kolom diskusi";
+                button.textContent = "Sembunyikan";
             }
         }
     }
