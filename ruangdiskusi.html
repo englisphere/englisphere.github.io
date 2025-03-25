@@ -16,8 +16,6 @@
 <style>
         #disqus_thread {
             display: none; /* Awalnya disembunyikan */
-            min-height: 300px; /* Beri tinggi minimal agar footer terdorong turun */
-            margin-top: 20px; /* Tambahkan jarak agar tidak terlalu mepet */
         }
         .toggle-btn {
             display: block;
@@ -55,6 +53,40 @@
             
             <p class="post-content">Silahkan berdiskusi di kolom chat yang disediakan, jangan lupa membuat akun disqus terlebih dahulu melalui akun google.
             <br><br>
+
+            <button id="toggleComments" class="toggle-btn">Tampilkan kolom diskusi</button>
+
+    <!-- Area Disqus -->
+    <div id="disqus_thread"></div>
+
+    <script>
+        var disqus_loaded = false;
+        function toggleComments() {
+            var disqusDiv = document.getElementById("disqus_thread");
+            var button = document.getElementById("toggleComments");
+
+            if (disqusDiv.style.display === "none") {
+                disqusDiv.style.display = "block";
+                button.textContent = "Tampilkan lebih sedikit";
+
+                // 🔴 Memuat Disqus hanya saat pertama kali diklik 🔴
+                if (!disqus_loaded) {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://englisphere.disqus.com/embed.js'; // Shortname Disqus kamu
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    disqus_loaded = true;
+                }
+
+            } else {
+                disqusDiv.style.display = "none";
+                button.textContent = "Tampilkan lebih banyak";
+            }
+        }
+
+        document.getElementById("toggleComments").addEventListener("click", toggleComments);
+    </script>
+                
             </p>
             
 
@@ -64,67 +96,7 @@
 
         </article>
 
-        <article class="post">
-            
-            
-            <p class="post-content">
-                
-            <button id="toggleComments" class="toggle-btn">Tampilkan kolom diskusi</button>
-
-    <!-- Area Disqus -->
-    <div id="disqus_thread"></div>
-
-    <script>
-    var disqus_loaded = false;
-
-    function toggleComments() {
-    var disqusDiv = document.getElementById("disqus_thread");
-    var button = document.getElementById("toggleComments");
-    var content = document.querySelector(".content"); // Kontainer utama
-
-    if (disqusDiv.style.display === "none") {
-        disqusDiv.style.display = "block";
-        button.textContent = "Sembunyikan";
-
-        // Tambahkan margin bawah agar footer terdorong
-        content.style.marginBottom = "350px";
-
-        if (!disqus_loaded) {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://englisphere.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            disqus_loaded = true;
-        }
-
-    } else {
-        disqusDiv.style.display = "none";
-        button.textContent = "Tampilkan kolom diskusi";
-
-        // Kembalikan margin bawah
-        content.style.marginBottom = "0";
-    }
-}
-
-
-    document.getElementById("toggleComments").addEventListener("click", toggleComments);
-
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var disqusDiv = document.getElementById("disqus_thread");
-        if (disqusDiv) {
-            disqusDiv.style.display = "none"; // Pastikan tidak muncul sebelum tombol diklik
-            disqusDiv.style.height = "0"; // Jangan sampai mengambil ruang
-        }
-    });
-
-        
-</script>
-            
-            </p>
-            
-        </article>
+       
 
     
     </section>
