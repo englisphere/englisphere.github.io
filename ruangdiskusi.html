@@ -71,35 +71,37 @@
 
     <script>
     var disqus_loaded = false;
+
     function toggleComments() {
         var disqusDiv = document.getElementById("disqus_thread");
         var button = document.getElementById("toggleComments");
 
-        // Langsung tampilkan div komentar
-        disqusDiv.style.display = "block";
-        button.textContent = "Tampilkan lebih sedikit";
-
-        // Load Disqus hanya sekali
         if (!disqus_loaded) {
+            // Load Disqus hanya sekali
+            disqusDiv.style.display = "block";
             var d = document, s = d.createElement('script');
-            s.src = 'https://englisphere.disqus.com/embed.js'; // Shortname Disqus kamu
+            s.src = 'https://englisphere.disqus.com/embed.js'; // Ganti dengan shortname Disqus kamu
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
             disqus_loaded = true;
+            button.textContent = "Tampilkan lebih sedikit";
         } else {
-            // Jika Disqus sudah dimuat, toggle tampilan
-            if (disqusDiv.style.display === "block") {
-                disqusDiv.style.display = "none";
-                button.textContent = "Tampilkan kolom diskusi";
-            } else {
-                disqusDiv.style.display = "block";
+            // Toggle dengan visibility agar Disqus tetap bisa ditampilkan kembali
+            if (disqusDiv.style.visibility === "hidden") {
+                disqusDiv.style.visibility = "visible";
+                disqusDiv.style.height = "auto"; // Pastikan tinggi kembali normal
                 button.textContent = "Tampilkan lebih sedikit";
+            } else {
+                disqusDiv.style.visibility = "hidden";
+                disqusDiv.style.height = "0"; // Sembunyikan tanpa menghapus elemen
+                button.textContent = "Tampilkan kolom diskusi";
             }
         }
     }
 
     document.getElementById("toggleComments").addEventListener("click", toggleComments);
 </script>
+
 
                 
             
