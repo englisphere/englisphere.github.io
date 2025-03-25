@@ -16,7 +16,6 @@
 <style>
         #disqus_thread {
             display: none; /* Awalnya disembunyikan */
-            
         }
         .toggle-btn {
             display: block;
@@ -30,52 +29,6 @@
             border-radius: 5px;
             width: 200px;
         }
-
-    .post-content {
-    display: block;
-    overflow: visible; /* Pastikan teks tidak tersembunyi */
-    height: auto; /* Pastikan elemen menyesuaikan tinggi teks */
-    white-space: normal; /* Pastikan teks tidak terpotong */
-    padding-bottom: 20px; /* Tambahkan ruang di bawah teks agar tidak terlalu dekat dengan tombol */
-}
-
-            .post-content {
-    display: block;
-    width: 100%; /* Pastikan lebar mengikuti parent */
-    max-width: 600px; /* Atur batas agar tidak terlalu melebar */
-    margin-bottom: 20px; /* Beri jarak sebelum tombol dan Disqus */
-    padding: 15px; /* Tambahkan ruang di dalam teks */
-    background-color: #f9f9f9; /* Opsional: Beri warna latar agar lebih jelas */
-    border-radius: 8px; /* Opsional: Buat tampilan lebih rapi */
-}
-
-
-    #disqus_thread {
-    display: none; /* Pastikan tersembunyi saat awal */
-    height: 0; /* Pastikan tidak mengambil ruang */
-    overflow: hidden; /* Mencegah elemen tersembunyi tetap berpengaruh */
-}
-
-
-article.post {
-    position: relative; /* Pastikan tidak menutupi elemen lain */
-    overflow: visible !important; /* Pastikan isinya tidak terpotong */
-    min-height: auto !important; /* Pastikan tingginya sesuai isi */
-    padding-bottom: 20px; /* Tambahkan ruang agar teks tidak terlalu mepet */
-    background: transparent !important; /* Pastikan tidak ada latar belakang yang menutupi */
-    z-index: 0 !important; /* Pastikan elemen ini tidak berada di atas teks */
-}
-
-    
-
-@media (max-width: 768px) { 
-    .post-content {
-        position: relative; /* Pastikan tidak tertutup elemen lain */
-        z-index: 10; /* Pastikan teks berada di atas */
-        background: white; /* Opsional: Pastikan latar belakang jelas */
-    }
-}
-
     </style>
 </head>
 <body>
